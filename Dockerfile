@@ -2,14 +2,14 @@ FROM alpine:3.6
 
 MAINTAINER James Kyburz "james.kyburz@gmail.com"
 
-RUN apk --no-cache add libgomp libltdl libpng libjpeg
+RUN apk --no-cache add libgomp libltdl libpng libjpeg tiff
 
 RUN apk --no-cache add --virtual native-deps \
   tar wget libjpeg-turbo-dev libpng-dev libtool libxml2 jasper-libs giflib-dev tiff-dev \
   git g++ gcc libgcc libstdc++ linux-headers make python && \
-  wget https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-0.6.0.tar.gz && \
-  tar -xzvf libwebp-0.6.0.tar.gz && \
-  cd libwebp-0.6.0 && \
+  wget https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-0.6.1.tar.gz && \
+  tar -xzvf libwebp-0.6.1.tar.gz && \
+  cd libwebp-0.6.1 && \
   ./configure && \
   make && \
   make install && \
@@ -30,6 +30,9 @@ RUN apk --no-cache add --virtual native-deps \
     --with-modules \
     --with-threads \
     --with-webp=yes \
+    --with-tiff=yes \
+    --with-jpeg=yes \
+    --with-jp2=yes \
     --with-gs-font-dir=/usr/share/fonts/Type1 \
     --with-quantum-depth=16 && \
   make && \
