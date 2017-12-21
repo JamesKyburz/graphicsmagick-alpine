@@ -1,5 +1,7 @@
 FROM alpine:3.6
 
+LABEL maintainer="James Kyburz james.kyburz@gmail.com"
+
 MAINTAINER James Kyburz "james.kyburz@gmail.com"
 
 RUN apk --no-cache add libgomp libltdl libpng libjpeg tiff
