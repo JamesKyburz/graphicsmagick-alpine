@@ -4,7 +4,7 @@ LABEL maintainer="James Kyburz james.kyburz@gmail.com"
 
 MAINTAINER James Kyburz "james.kyburz@gmail.com"
 
-RUN apk --no-cache add libgomp libltdl libpng libjpeg tiff
+RUN apk --no-cache add libgomp libltdl libpng libjpeg tiff libwebp-tools
 
 RUN apk --no-cache add --virtual native-deps \
   tar wget libjpeg-turbo-dev libpng-dev libtool libxml2 jasper-libs giflib-dev tiff-dev \
